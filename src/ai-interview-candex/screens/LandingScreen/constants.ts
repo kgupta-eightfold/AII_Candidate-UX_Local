@@ -6,8 +6,8 @@ export const SECTIONS = [
 ];
 
 export const INTRO_VIDEOS = [
-  { src: '/welcome-to-eightfold.mp4', chip: null },
-  { src: '/breaks-between-sections.mp4', chip: 'Even breaks are included' },
-  { src: '/think-out-loud.mp4', chip: 'Think out loud' },
-  { src: '/deep-breath-relax.mp4', chip: 'Just relax and be yourself' },
+  { src: `${import.meta.env.BASE_URL}welcome-to-eightfold.mp4`, chip: null },
+  { src: `${import.meta.env.BASE_URL}breaks-between-sections.mp4`, chip: 'Even breaks are included' },
+  { src: `${import.meta.env.BASE_URL}think-out-loud.mp4`, chip: 'Think out loud' },
+  { src: `${import.meta.env.BASE_URL}deep-breath-relax.mp4`, chip: 'Just relax and be yourself' },
 ];

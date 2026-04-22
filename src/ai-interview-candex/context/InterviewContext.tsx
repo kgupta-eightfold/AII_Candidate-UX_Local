@@ -94,7 +94,7 @@ export const SECTION_TRANSITION_END_INTERVIEW: TransitionConfig = {
   primaryLabel: i18nUtils.gettext('End interview'),
 };
 
-export const VIDEO_BASE = '/videos/';
+export const VIDEO_BASE = `${import.meta.env.BASE_URL}videos/`;
 
 /** Use for filenames that may contain spaces (e.g. "Sophia intro.mp4"). */
 export function videoUrl(filename: string): string {
