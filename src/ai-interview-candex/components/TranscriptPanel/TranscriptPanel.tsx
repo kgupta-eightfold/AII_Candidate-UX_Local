@@ -5,7 +5,7 @@ import { useInterview } from '../../context/InterviewContext';
 import styles from './transcriptPanel.module.scss';
 
 /** Served from `public/olivia-avatar.png` */
-const TRANSCRIPT_AI_AVATAR_SRC = '/olivia-avatar.png';
+const TRANSCRIPT_AI_AVATAR_SRC = `${import.meta.env.BASE_URL}olivia-avatar.png`;
 
 interface TranscriptPanelProps {
   messages?: { text: string; dimmed?: boolean }[];

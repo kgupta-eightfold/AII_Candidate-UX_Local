@@ -18,7 +18,7 @@ function LandingHeader() {
   return (
     <header className={styles.landingHeader}>
       <div className={styles.landingHeaderLogo}>
-        <img src="/ef-logo.png" alt="" />
+        <img src={`${import.meta.env.BASE_URL}ef-logo.png`} alt="" />
         <span className={styles.landingHeaderLogoText}>{t('Eightfold.ai')}</span>
       </div>
       <div className={styles.landingHeaderRight}>
@@ -39,7 +39,7 @@ function LandingFooter() {
     <footer className={styles.landingFooter}>
       <div className={styles.landingFooterInner}>
         <span className={styles.landingFooterText}>{t('Powered by')}</span>
-        <img src="/eightfold_logo_white.png" alt="eightfold.ai" className={styles.landingFooterLogo} />
+        <img src={`${import.meta.env.BASE_URL}eightfold_logo_white.png`} alt="eightfold.ai" className={styles.landingFooterLogo} />
         <span className={styles.landingFooterText}>{t('#Whatsnextforyou')}</span>
       </div>
     </footer>
@@ -134,7 +134,7 @@ export default function LandingScreen({ variant = 'default' }: LandingScreenProp
   return (
     <section className="screen active" id={`screen-landing-${variant}`}>
       <div className={styles.landingPage}>
-        <img src="/landing-bg.png" alt="" className={styles.landingBgImage} />
+        <img src={`${import.meta.env.BASE_URL}landing-bg.png`} alt="" className={styles.landingBgImage} />
 
         <LandingHeader />
 

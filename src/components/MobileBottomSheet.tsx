@@ -5,7 +5,7 @@ import { Button, ButtonSize, ButtonVariant, IconName } from '@eightfold.ai/octup
 import { useInterview } from '@context/InterviewContext';
 import TextSizePopup, { type TextSize } from './TextSizePopup';
 
-const AVATAR_SRC = '/olivia-avatar.png';
+const AVATAR_SRC = `${import.meta.env.BASE_URL}olivia-avatar.png`;
 
 interface MobileBottomSheetProps {
   messages?: { text: string; dimmed?: boolean }[];

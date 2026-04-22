@@ -40,7 +40,7 @@ export default function TopBar() {
       })}
     >
       <div className={styles.titleGroup}>
-        <img className={styles.titleIcon} src="/ef-logo.png" alt="EF logo" />
+        <img className={styles.titleIcon} src={`${import.meta.env.BASE_URL}ef-logo.png`} alt="EF logo" />
         <div className={styles.titleDivider} />
         <span className={styles.titleText}>{i18nUtils.gettext('Smart Interview')}</span>
       </div>

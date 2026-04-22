@@ -290,7 +290,7 @@ function InfoCard() {
           <p>&bull; {t('A private space to be your authentic self.')}</p>
         </div>
         <div className={styles.gmailInfoIllustration}>
-          <img src="/meditation-illustration.png" alt="" width="180" />
+          <img src={`${import.meta.env.BASE_URL}meditation-illustration.png`} alt="" width="180" />
         </div>
       </div>
       <div className={styles.gmailInfoFooter}>
@@ -309,7 +309,7 @@ function PoweredFooter() {
     <div className={styles.gmailPoweredFooter}>
       <div className={styles.gmailPoweredLeft}>
         <span>{t('Powered by')}</span>
-        <img src="/ef-logo.png" alt="" width="20" height="20" />
+        <img src={`${import.meta.env.BASE_URL}ef-logo.png`} alt="" width="20" height="20" />
         <span className={styles.gmailPoweredName}>{t('eightfold.ai')}</span>
       </div>
       <span className={styles.gmailPrivacy}>{t('Privacy policy')}</span>
@@ -387,7 +387,7 @@ export default function EmailScreen() {
 
             <div className={styles.gmailEmailBody}>
               <div className={styles.gmailEfLogo}>
-                <img src="/ef-logo.png" alt="" width="24" height="24" />
+                <img src={`${import.meta.env.BASE_URL}ef-logo.png`} alt="" width="24" height="24" />
                 <span className={styles.gmailEfLogoText}>{t('eightfold.ai')}</span>
               </div>
 

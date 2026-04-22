@@ -39,7 +39,7 @@ export default function FeedbackFormScreen() {
       <header className={styles.fbNav}>
         <div className={styles.fbNavLeft}>
           <div className={styles.fbBrand}>
-            <img src="/ef-logo.png" alt="Eightfold" width={24} height={24} />
+            <img src={`${import.meta.env.BASE_URL}ef-logo.png`} alt="Eightfold" width={24} height={24} />
           </div>
           <nav className={styles.fbNavTabs}>
             <div className={styles.fbNavTab}>{t('Eightfold.ai')}</div>
@@ -47,7 +47,7 @@ export default function FeedbackFormScreen() {
         </div>
         <div className={styles.fbNavRight}>
           <button type="button" className={styles.fbBtnSignin}>
-            <img src="/ef-logo.png" alt="" width={16} height={16} />
+            <img src={`${import.meta.env.BASE_URL}ef-logo.png`} alt="" width={16} height={16} />
             {t('Sign in')}
           </button>
           <button type="button" className={styles.fbBtnCart} aria-label={t('Cart')}>
@@ -210,7 +210,7 @@ export default function FeedbackFormScreen() {
         {/* Powered by footer */}
         <footer className={styles.fbFooter}>
           <span className={styles.fbFooterText}>{t('Powered by')}</span>
-          <img src="/ef-logo.png" alt="Eightfold" width={18} height={18} />
+          <img src={`${import.meta.env.BASE_URL}ef-logo.png`} alt="Eightfold" width={18} height={18} />
           <span className={styles.fbFooterBrand}>{t('eightfold.ai')}</span>
           <span className={styles.fbFooterText}>{t('#Whatsnextforyou')}</span>
         </footer>
