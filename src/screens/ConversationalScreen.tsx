@@ -5,13 +5,12 @@ import {
   VIDEOS,
   TRANSCRIPTS,
   SECTION_TRANSITION_TECHQNA,
-} from '../context/InterviewContext';
-import AvatarArea from '../components/AvatarArea';
-import SectionTransitionCard from '../components/SectionTransitionCard';
-import { InterviewBackground, InterviewMainBand } from '../components/interview';
-import SelfVideoPanel from '../components/SelfVideoPanel';
-import TranscriptPanel from '../components/TranscriptPanel';
-import '../styles/interview.css';
+} from '@context/InterviewContext';
+import AvatarArea from '@components/AvatarArea';
+import SectionTransitionCard from '@components/SectionTransitionCard';
+import { InterviewBackground, InterviewMainBand } from '@components/interview';
+import SelfVideoPanel from '@components/SelfVideoPanel';
+import TranscriptPanel from '@components/TranscriptPanel';
 
 export default function ConversationalScreen() {
   const { state, dispatch } = useInterview();

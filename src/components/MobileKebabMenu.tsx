@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useCallback, type ReactNode } from 'react'
 import { createPortal } from 'react-dom';
 import { Icon, IconName, IconSize } from '@eightfold.ai/octuple';
 import { mdiInformationOutline, mdiClosedCaption, mdiViewGrid } from '@mdi/js';
-import { useInterview } from '../context/InterviewContext';
+import { useInterview } from '@context/InterviewContext';
 
 interface MobileKebabMenuProps {
   children: ReactNode;

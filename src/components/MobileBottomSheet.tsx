@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { mdiChevronDown } from '@mdi/js';
 import { Button, ButtonSize, ButtonVariant, IconName } from '@eightfold.ai/octuple';
-import { useInterview } from '../context/InterviewContext';
+import { useInterview } from '@context/InterviewContext';
 import TextSizePopup, { type TextSize } from './TextSizePopup';
 
 const AVATAR_SRC = '/olivia-avatar.png';
