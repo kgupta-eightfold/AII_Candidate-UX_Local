@@ -3,6 +3,12 @@
 Prototype repo for **AI Interview Candidate Experience** designs. Components here
 are structured to be copy-pasted into `vscode/www/react` with minimal changes.
 
+## Live preview
+
+[https://kgupta-eightfold.github.io/AII_Candidate-UX_Local/](https://kgupta-eightfold.github.io/AII_Candidate-UX_Local/)
+
+Deployed automatically on every push to `main` via GitHub Actions.
+
 ---
 
 ## Prerequisites
