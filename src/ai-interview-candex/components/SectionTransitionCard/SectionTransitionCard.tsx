@@ -1,0 +1,84 @@
+import classnames from 'classnames';
+import { i18nUtils } from '@i18n';
+import { useInterview } from '../../context/InterviewContext';
+import styles from './sectionTransitionCard.module.scss';
+
+/**
+ * Section handoff CTAs shown in the interview main area (replaces the former full-screen transition modal).
+ * Design reference: https://www.figma.com/design/9iS8TSEUPITZacdJ6TSBQz/%E2%9C%85-AI-Interview---Part-5?node-id=9-29745
+ */
+export default function SectionTransitionCard() {
+  const { state, dispatch } = useInterview();
+
+  if (!state.transitionModal) return null;
+
+  const { title, duration, details, primaryOnly, primaryLabel } = state.transitionModal;
+  const showBreak = !primaryOnly;
+  const continueLabel = primaryLabel ?? i18nUtils.gettext('Continue');
+
+  const handleContinue = () => {
+    dispatch({ type: 'HIDE_TRANSITION' });
+
+    if (state.screen === 'endInterview') {
+      dispatch({ type: 'SET_SCREEN', screen: 'feedbackForm' });
+      dispatch({ type: 'SET_CONTROLS_MODE', mode: 'hidden' });
+      return;
+    }
+
+    if (state.phase === 'promptTechQna') {
+      dispatch({ type: 'SET_PHASE', phase: 'techQnaIntro' });
+      dispatch({ type: 'SET_SCREEN', screen: 'techqna' });
+      dispatch({ type: 'SET_CONTROLS_MODE', mode: 'expanded' });
+    } else if (state.phase === 'promptCoding') {
+      dispatch({ type: 'SET_PHASE', phase: 'codingIntro' });
+      dispatch({ type: 'SET_SCREEN', screen: 'coding' });
+      dispatch({ type: 'SET_CONTROLS_MODE', mode: 'collapsed' });
+    } else if (state.phase === 'promptWhiteboard') {
+      dispatch({ type: 'SET_PHASE', phase: 'whiteboardActive' });
+      dispatch({ type: 'SET_SCREEN', screen: 'whiteboard' });
+      dispatch({ type: 'SET_CONTROLS_MODE', mode: 'collapsed' });
+    }
+  };
+
+  const handleBreak = () => {
+    dispatch({ type: 'HIDE_TRANSITION' });
+    dispatch({ type: 'START_BREAK', returnPhase: state.phase });
+  };
+
+  return (
+    <div className={styles.sectionTransitionCard} role="region" aria-label={i18nUtils.gettext('Next section')}>
+      <div className={styles.sectionTransitionHeader}>
+        <span className={styles.sectionTransitionTitle}>{title}</span>
+        <div className={styles.sectionTransitionTime}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+            <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+          <span>{duration}</span>
+        </div>
+      </div>
+      <div className="sc-divider" />
+      <ul className={styles.sectionTransitionDetails}>
+        {details.map((d, i) => (
+          <li key={i}>{d}</li>
+        ))}
+      </ul>
+      <div
+        className={classnames(
+          styles.sectionTransitionActions,
+          'sc-footer-actions',
+          { [styles.sectionTransitionActionsPrimaryOnly]: primaryOnly },
+        )}
+      >
+        <button type="button" className={classnames('sc-btn-next', styles.sectionTransitionCta)} onClick={handleContinue}>
+          {continueLabel}
+        </button>
+        {showBreak ? (
+          <button type="button" className={classnames('sc-verify-btn', styles.sectionTransitionCta)} onClick={handleBreak}>
+            {i18nUtils.gettext('Take a 10 min break')}
+          </button>
+        ) : null}
+      </div>
+    </div>
+  );
+}

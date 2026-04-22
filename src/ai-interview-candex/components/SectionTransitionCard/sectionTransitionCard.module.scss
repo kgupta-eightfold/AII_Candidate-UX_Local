@@ -1,0 +1,113 @@
+.section-transition-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 454px;
+}
+
+.section-transition-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-transition-title {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: #d9dce1;
+}
+
+.section-transition-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Gilroy', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #bec2ca;
+}
+
+.section-transition-details {
+  list-style: disc;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  li {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #bec2ca;
+    margin-left: 24px;
+  }
+}
+
+.section-transition-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 36px;
+
+  &.section-transition-actions--primary-only {
+    justify-content: flex-end;
+  }
+}
+
+.section-transition-cta {
+  // Base styles handled by shared sc-* global classes
+}
+
+// Shared sc-* classes from system-check-modal — kept global
+:global(.sc-divider) {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.04);
+  width: 100%;
+}
+
+:global(.sc-footer-actions) {
+  display: flex;
+  gap: 15px;
+  margin-top: 36px;
+}
+
+:global(.sc-btn-next) {
+  flex: 1;
+  padding: 8px 16px;
+  border-radius: 31px;
+  border: none;
+  background: #054d7b;
+  color: #bce4ff;
+  font-family: 'Gilroy', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  transition: opacity 150ms ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+:global(.sc-verify-btn) {
+  flex: 1;
+  padding: 8px 16px;
+  border-radius: 31px;
+  border: none;
+  background: #4f5666;
+  color: #bce4ff;
+  font-family: 'Gilroy', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  transition: opacity 150ms ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}

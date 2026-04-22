@@ -1,0 +1,190 @@
+// Drag handle — hidden on desktop, visible on mobile
+.sheet-handle {
+  display: none;
+}
+
+.transcript-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  overflow: hidden;
+  background: var(--bg-surface);
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  transition: width 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+
+  &.open {
+    width: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sheet-handle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &::before {
+      content: '';
+      width: 36px;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  .transcript-panel {
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px 16px 0 0;
+    transition: height 350ms cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+
+    &.open {
+      width: 100%;
+      height: 300px;
+    }
+
+    &.open.expanded {
+      height: 80vh;
+    }
+  }
+
+  .transcript-messages {
+    height: auto;
+    flex: 1;
+    overflow-y: auto;
+  }
+}
+
+// Shared classes used by other components — kept global
+:global(.panel-surface-header) {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+:global(.panel-surface-title) {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+:global(.panel-header-actions) {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+:global(.toolbar-icon-btn) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-primary);
+  }
+
+  &:global(.small) {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.transcript-messages {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  height: calc(100% - 57px);
+}
+
+.transcript-msg {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.msg-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.msg-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin: 0;
+
+  &.dimmed-text {
+    color: var(--text-secondary);
+    opacity: 0.6;
+  }
+}
+
+.transcript-participants {
+  padding: 16px 20px;
+}
+
+.transcript-participants-header {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.transcript-participants-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.transcript-participant-tile {
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  position: relative;
+}
+
+.transcript-participant-label {
+  position: absolute;
+  bottom: 4px;
+  left: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1px 6px;
+  border-radius: 4px;
+}

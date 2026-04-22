@@ -1,0 +1,27 @@
+/* ConversationalScreen — layout classes (techqna-content, transcript-area, etc.)
+   are defined in global.scss because they are shared across screens. */
+
+/* Screen-specific: conversational transcript side-panel */
+.conv-transcript-panel {
+  position: absolute;
+  top: 70px; right: 0; bottom: 100px;
+  width: 0; min-width: 0;
+  background: var(--bg-card);
+  border: 1px solid transparent;
+  border-radius: var(--radius-card);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 15;
+  transition: width 400ms cubic-bezier(0.16, 1, 0.3, 1),
+              min-width 400ms cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 300ms ease,
+              border-color 300ms ease,
+              box-shadow 300ms ease;
+}
+.conv-transcript-panel--open {
+  width: 380px; min-width: 380px;
+  opacity: 1;
+  border-color: var(--bg-card-border);
+  box-shadow: var(--shadow-card);
+}

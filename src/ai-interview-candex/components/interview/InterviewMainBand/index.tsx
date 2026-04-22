@@ -1,0 +1,1 @@
+export { InterviewMainBand } from './InterviewMainBand';

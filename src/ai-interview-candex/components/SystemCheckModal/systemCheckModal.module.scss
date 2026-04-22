@@ -1,0 +1,524 @@
+/* ---------- Overlay ---------- */
+.sc-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-overlay);
+  animation: sc-overlay-fade-in 280ms ease forwards;
+}
+
+@keyframes sc-overlay-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- Modal ---------- */
+.sc-modal {
+  width: 960px;
+  height: 640px;
+  background: #1a212e;
+  border: 1px solid #343c4c;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0px 8px 32px 0px rgba(15, 20, 31, 0.16),
+    0px -1px 2px 0px rgba(15, 20, 31, 0.12);
+  animation: sc-modal-enter 320ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes sc-modal-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-overlay {
+    animation: none;
+    opacity: 1;
+  }
+  .sc-modal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Header ---------- */
+.sc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  flex-shrink: 0;
+}
+
+.sc-header-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: #ffffff;
+}
+
+/* ---------- Body ---------- */
+.sc-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  padding: 16px 24px;
+  gap: 24px;
+}
+
+/* ---------- Left Stepper ---------- */
+.sc-stepper {
+  width: 216px;
+  flex-shrink: 0;
+  padding: 24px;
+}
+
+.sc-stepper-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sc-stepper-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sc-stepper-separator {
+  width: 2px;
+  height: 48px;
+  border: none;
+  margin: 0 0 0 21px;
+  background: rgba(20, 109, 166, 0.3);
+  transition: background 300ms ease;
+}
+
+.sc-stepper-separator--done {
+  background: #146da6;
+}
+
+.sc-stepper-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sc-stepper-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #bdc1c9;
+  border: 1px dashed #146da6;
+  background: transparent;
+  flex-shrink: 0;
+  transition: all 300ms ease;
+}
+
+.sc-stepper-circle--active {
+  border: 2px solid #146da6;
+  border-style: solid;
+  background: rgba(26, 33, 46, 0.88);
+  color: #d9dce1;
+}
+
+.sc-stepper-circle--done {
+  border: 2px solid #146da6;
+  border-style: solid;
+  background: #146da6;
+  color: #ffffff;
+}
+
+.sc-stepper-label {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #a1a6b1;
+  transition: color 300ms ease;
+}
+
+.sc-stepper-label--active {
+  color: #ffffff;
+}
+
+/* ---------- Right Content Card ---------- */
+.sc-content {
+  flex: 1;
+  min-width: 0;
+  background: #1a212e;
+  border: 1px solid #343c4c;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+/* ---------- Section ---------- */
+.sc-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: opacity 300ms ease;
+  padding-bottom: 8px;
+}
+
+.sc-section--dimmed {
+  opacity: 0.4;
+}
+
+.sc-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sc-section-icon {
+  flex-shrink: 0;
+}
+
+.sc-section-icon--spin {
+  animation: scSpin 1.4s linear infinite;
+}
+
+.sc-section-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: #bdc1c9;
+}
+
+/* ---------- Divider ---------- */
+.sc-divider {
+  width: 100%;
+  height: 1px;
+  background: #343c4c;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+/* ---------- Permission spinner ---------- */
+.sc-perm-spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #343c4c;
+  border-top-color: #8ce1ca;
+  animation: scSpin 700ms linear infinite;
+  flex-shrink: 0;
+}
+
+/* ---------- Camera Preview ---------- */
+.sc-camera-preview {
+  width: 434px;
+  max-width: 100%;
+  height: 248px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.25);
+  position: relative;
+  border: 1px solid #8ed0fa;
+  align-self: center;
+  padding: 12px, 0px;
+}
+
+.sc-camera-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.sc-camera-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.sc-camera-placeholder-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #69717f;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  max-width: 200px;
+}
+
+.sc-placeholder-icons {
+  display: flex;
+  gap: 12px;
+  align-self: center;
+  padding-bottom: 8px;
+}
+
+.sc-placeholder-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffefef;
+  border: none;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+/* ---------- Device controls (when permission granted) ---------- */
+.sc-device-controls {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---------- Agent check sub-text ---------- */
+.sc-agent-subtext {
+  font-size: 14px;
+  font-weight: 400;
+  color: #bdc1c9;
+  margin: 0;
+  padding-left: 36px;
+}
+
+/* ---------- Consent ---------- */
+.sc-consent-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sc-consent-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #d9dce1;
+  margin: 0;
+}
+
+.sc-link {
+  color: #8ed0fa;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sc-link:hover {
+  text-decoration: underline;
+}
+
+.sc-consent-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.sc-consent-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #2c8cc9;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ---------- Verify ---------- */
+.sc-verify-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sc-verify-text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #d9dce1;
+  margin: 0;
+}
+
+.sc-verify-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #bdc1c9;
+  list-style: disc;
+  padding-bottom: 12px;
+}
+
+.sc-verify-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 24px;
+  background: transparent;
+  border: 1px solid #4f5666;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 150ms ease;
+  align-self: flex-start;
+}
+
+.sc-verify-btn:hover:not(:disabled) {
+  border-color: #bdc1c9;
+}
+
+.sc-verify-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sc-verify-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  opacity: 0.7;
+}
+
+/* ---------- Verified ---------- */
+.sc-verified-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex: 1;
+  padding: 40px 16px;
+  text-align: center;
+}
+
+.sc-shield-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sc-verified-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #d9dce1;
+  margin: 0;
+  max-width: 360px;
+}
+
+/* ---------- Footer ---------- */
+.sc-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  flex-shrink: 0;
+}
+
+.sc-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sc-btn-more {
+  padding: 8px 16px;
+  border-radius: 24px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #343c4c;
+  cursor: pointer;
+}
+
+.sc-btn-cancel {
+  padding: 8px 16px;
+  border-radius: 24px;
+  background: #f6f7f8;
+  font-size: 16px;
+  font-weight: 600;
+  color: #343c4c;
+  border: none;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.sc-btn-cancel:hover {
+  background: #e8eaed;
+}
+
+.sc-btn-next {
+  padding: 8px 16px;
+  border-radius: 24px;
+  background: #8ed0fa;
+  font-size: 16px;
+  font-weight: 600;
+  color: #002a47;
+  border: none;
+  cursor: pointer;
+  transition: opacity 150ms ease;
+}
+
+.sc-btn-next:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.sc-btn-next:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---------- Spinner keyframe ---------- */
+@keyframes scSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

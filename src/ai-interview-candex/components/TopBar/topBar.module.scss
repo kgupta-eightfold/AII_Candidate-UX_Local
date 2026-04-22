@@ -1,0 +1,96 @@
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: #1a212e;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  z-index: 10;
+}
+
+.coding-top-bar {
+  height: 60px;
+}
+
+.title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.title-divider {
+  width: 1px;
+  height: 20px;
+  background: #4f5666;
+  flex-shrink: 0;
+}
+
+.title-text {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: #e8eaee;
+  white-space: nowrap;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.screening-label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #b9f4e4;
+  white-space: nowrap;
+}
+
+.timer-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 4px;
+  background: #b9f4e4;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #1b5143;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    height: 53px;
+    padding: 0 20px;
+  }
+
+  .title-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .screening-label {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .timer-pill {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

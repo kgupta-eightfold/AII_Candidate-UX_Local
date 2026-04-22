@@ -1,0 +1,426 @@
+/* ================================================
+   GMAIL EMAIL SCREEN
+   ================================================ */
+.gmail-page {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  background: #F6F8FC;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: #202124;
+}
+
+/* ---------- Top Bar ---------- */
+.gmail-topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; padding: 0 16px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E0E0E0;
+  flex-shrink: 0;
+}
+.gmail-topbar-left {
+  display: flex; align-items: center; gap: 16px;
+}
+.gmail-hamburger { cursor: pointer; }
+.gmail-logo { height: 28px; }
+.gmail-search {
+  display: flex; align-items: center; gap: 12px;
+  background: #EAF1FB;
+  border-radius: 28px;
+  padding: 10px 20px;
+  min-width: 500px;
+  color: #5F6368;
+}
+.gmail-search-text { font-size: 16px; }
+.gmail-topbar-right { display: flex; align-items: center; }
+.gmail-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: #1A73E8;
+  color: #FFF;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 600;
+}
+
+/* ---------- Body (sidebar + email) ---------- */
+.gmail-body {
+  flex: 1; display: flex; min-height: 0;
+}
+
+/* ---------- Sidebar ---------- */
+.gmail-sidebar {
+  width: 220px; flex-shrink: 0;
+  padding: 8px 12px;
+  overflow-y: auto;
+}
+.gmail-compose {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 24px;
+  background: #C2E7FF;
+  border-radius: 16px;
+  font-size: 14px; font-weight: 600;
+  color: #001D35;
+  cursor: pointer;
+  margin-bottom: 12px;
+  border: none;
+  transition: box-shadow 150ms ease;
+}
+.gmail-compose:hover { box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+.gmail-nav-items { display: flex; flex-direction: column; gap: 2px; }
+.gmail-nav-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 6px 12px;
+  border-radius: 24px;
+  font-size: 13px; font-weight: 500;
+  color: #1A1A1A;
+  cursor: pointer;
+  transition: background 100ms ease;
+}
+.gmail-nav-item:hover { background: #E8EAED; }
+.gmail-nav-item-active { background: #D3E3FD; font-weight: 600; }
+.gmail-nav-item-muted { color: #5F6368; }
+.gmail-badge {
+  margin-left: auto;
+  font-size: 12px; font-weight: 600;
+}
+.gmail-badge-sm {
+  margin-left: auto;
+  font-size: 12px; color: #5F6368;
+}
+.gmail-sidebar-divider {
+  height: 1px; background: #E0E0E0;
+  margin: 8px 0;
+}
+.gmail-nav-label {
+  padding: 8px 12px;
+  font-size: 13px; font-weight: 600;
+  color: #1A1A1A;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.gmail-label-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ---------- Email Content ---------- */
+.gmail-email-content {
+  flex: 1; min-width: 0;
+  background: #FFFFFF;
+  border-radius: 8px;
+  margin: 4px 4px 4px 0;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.gmail-email-header { display: flex; flex-direction: column; gap: 12px; }
+.gmail-email-subject {
+  font-size: 24px; font-weight: 500;
+  line-height: 32px;
+  color: #000000;
+  margin: 0;
+  padding-left: 48px;
+}
+.gmail-email-meta {
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.gmail-sender-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: #7B1FA2;
+  color: #FFF;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 600;
+  flex-shrink: 0;
+}
+.gmail-sender-info { flex: 1; min-width: 0; }
+.gmail-sender-name { font-size: 14px; color: #202124; }
+.gmail-sender-to { font-size: 12px; color: #5F6368; margin-top: 2px; }
+.gmail-email-date {
+  font-size: 12px; color: #5F6368;
+  white-space: nowrap; flex-shrink: 0;
+}
+
+/* ---------- Email Body ---------- */
+.gmail-email-body {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex; flex-direction: column; gap: 24px;
+  padding: 24px 80px;
+}
+.gmail-ef-logo {
+  display: flex; align-items: center; gap: 8px;
+}
+.gmail-ef-logo-text {
+  font-size: 20px; font-weight: 600;
+  color: #4F5666;
+}
+.gmail-email-text {
+  font-size: 16px; font-weight: 500;
+  line-height: 24px;
+  color: #69717F;
+  margin: 0;
+}
+.gmail-email-text strong { color: #69717F; font-weight: 600; }
+.gmail-link-bold {
+  font-weight: 600;
+  color: #146DA6;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---------- Interview / Assessment Card ---------- */
+.gmail-card {
+  border: 1px solid #D9DCE1;
+  border-radius: 16px;
+  display: flex; flex-direction: column;
+  gap: 24px;
+  padding: 16px 24px;
+  overflow: hidden;
+}
+.gmail-card-header {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.gmail-card-header-row {
+  display: flex; align-items: center; gap: 8px;
+  flex-wrap: wrap;
+}
+.gmail-card-title {
+  font-size: 20px; font-weight: 600;
+  color: #1A212E;
+  line-height: 28px;
+}
+.gmail-card-tags {
+  display: flex; align-items: center; gap: 6px;
+}
+.gmail-inline-pill {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+.gmail-card-body {
+  display: flex; flex-direction: column; gap: 24px;
+}
+.gmail-card-desc {
+  font-size: 14px; font-weight: 400;
+  line-height: 20px;
+  color: #1A212E;
+  margin: 0;
+}
+.gmail-card-desc strong { font-weight: 600; }
+
+/* Coverage / Sections */
+.gmail-card-coverage {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.gmail-card-coverage-label {
+  display: flex; align-items: center;
+  font-size: 12px; font-weight: 600;
+  color: #054D7B;
+  line-height: 16px;
+  margin: 0;
+}
+.gmail-card-coverage-tags {
+  display: flex; align-items: center; gap: 4px;
+  flex-wrap: wrap;
+}
+.gmail-card-section-tag {
+  font-size: 12px; font-weight: 500;
+  color: #4F5666;
+  background: #F6F7F8;
+  padding: 2px 8px;
+  border-radius: 8px;
+  line-height: 16px;
+}
+.gmail-card-section-dot {
+  color: #69717F; font-size: 12px;
+}
+
+/* Timeline (Interview + Assessment combined) */
+.gmail-card-timeline {
+  display: flex; flex-direction: column; gap: 0;
+  padding-left: 4px;
+}
+.gmail-card-timeline-item {
+  display: flex; gap: 16px;
+  position: relative;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+.gmail-card-timeline-item:last-child {
+  padding-bottom: 0;
+}
+.gmail-card-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 5px; top: 8px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #2C8CC9;
+}
+.gmail-card-timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 8px; top: 20px;
+  width: 2px;
+  bottom: 4px;
+  background: #D9DCE1;
+  border-radius: 1px;
+}
+.gmail-card-timeline-content {
+  flex: 1; min-width: 0;
+}
+.gmail-card-timeline-header {
+  display: flex; align-items: center; gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.gmail-card-timeline-name {
+  font-size: 14px; font-weight: 600;
+  color: #1A212E;
+}
+
+/* Buttons */
+.gmail-card-buttons {
+  display: flex; gap: 8px;
+}
+.gmail-btn-primary {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  height: 32px;
+  padding: 4px 16px;
+  background: linear-gradient(to right, #8ED0FA 0%, #A9B0F5 49%, #D8B1D4 100%);
+  border-radius: 24px;
+  font-size: 14px; font-weight: 600;
+  line-height: 20px;
+  color: #054D7B;
+  border: none;
+  cursor: pointer;
+  transition: filter 150ms ease;
+}
+.gmail-btn-primary:hover { filter: brightness(0.95); }
+.gmail-btn-secondary {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  height: 32px;
+  padding: 4px 16px;
+  background: #F6F7F8;
+  border-radius: 24px;
+  font-size: 14px; font-weight: 600;
+  line-height: 20px;
+  color: #343C4C;
+  border: none;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+.gmail-btn-secondary:hover { background: #EDEEF0; }
+
+/* Card footer */
+.gmail-card-footer {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.gmail-card-footer-divider {
+  height: 1px;
+  background: #D9DCE1;
+}
+.gmail-card-footer-row {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.gmail-card-expiry {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 12px; font-weight: 500;
+  color: #1A212E;
+}
+.gmail-card-help {
+  font-size: 14px; font-weight: 600;
+  color: #146DA6;
+  cursor: pointer;
+}
+
+/* ---------- Info Card ---------- */
+.gmail-info-card {
+  border: 1px solid #D9DCE1;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+.gmail-info-header {
+  padding: 16px 24px 0;
+}
+.gmail-info-title {
+  font-size: 14px; font-weight: 600;
+  color: #7E3A77;
+  line-height: 20px;
+}
+.gmail-info-body {
+  display: flex; align-items: flex-start;
+  padding: 8px 24px 12px;
+  position: relative;
+}
+.gmail-info-points {
+  flex: 1;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.gmail-info-points p {
+  font-size: 12px; font-weight: 500;
+  line-height: 16px;
+  color: #4F5666;
+  margin: 0;
+}
+.gmail-info-illustration {
+  flex-shrink: 0;
+  margin-top: -40px;
+  margin-right: -8px;
+}
+.gmail-info-footer {
+  padding: 0 16px 12px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.gmail-info-footer-divider {
+  height: 1px;
+  background: #D9DCE1;
+}
+.gmail-info-footer-link {
+  display: flex; align-items: center; gap: 6px;
+}
+.gmail-know-more {
+  font-size: 14px; font-weight: 600;
+  color: #146DA6;
+  cursor: pointer;
+}
+
+/* ---------- Powered Footer ---------- */
+.gmail-powered-footer {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  padding: 48px 80px;
+  margin: 0 -80px;
+  background: #1A212E;
+  color: #FFFFFF;
+}
+.gmail-powered-left {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 500;
+}
+.gmail-powered-name { font-weight: 600; }
+.gmail-privacy {
+  font-size: 12px; font-weight: 500;
+  color: #BCE4FF;
+}
+
+/* ---------- Reply Bar ---------- */
+.gmail-reply-bar {
+  display: flex; gap: 8px;
+  padding: 12px 0;
+}
+.gmail-reply-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 24px;
+  border: 1px solid #D9DCE1;
+  border-radius: 24px;
+  background: #FFFFFF;
+  font-size: 14px; font-weight: 500;
+  color: #3C4043;
+  cursor: pointer;
+  transition: background 100ms ease;
+}
+.gmail-reply-btn:hover { background: #F6F7F8; }
