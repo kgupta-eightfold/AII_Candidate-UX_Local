@@ -212,9 +212,9 @@ export default function TechQnAScreen() {
                 </button>
               </div>
             )}
-
-            {state.transitionModal && <SectionTransitionCard />}
           </div>
+
+          {state.transitionModal && <SectionTransitionCard />}
         </div>
 
         <TranscriptPanel messages={transcriptMessages} variant="coding" />

@@ -44,7 +44,7 @@ export type InterviewPhase =
 
 export interface TransitionConfig {
   title: string;
-  duration: string;
+  duration?: string;
   details: string[];
   /** When true, hide "Take a break" — single primary action only. */
   primaryOnly?: boolean;
@@ -88,7 +88,6 @@ export const SECTION_TRANSITION_WHITEBOARD: TransitionConfig = {
 /** End interview handoff — same card shell as other section transitions. */
 export const SECTION_TRANSITION_END_INTERVIEW: TransitionConfig = {
   title: i18nUtils.gettext('Interview completed'),
-  duration: '—',
   details: [i18nUtils.gettext('You can end the interview and move to feedback page.')],
   primaryOnly: true,
   primaryLabel: i18nUtils.gettext('End interview'),

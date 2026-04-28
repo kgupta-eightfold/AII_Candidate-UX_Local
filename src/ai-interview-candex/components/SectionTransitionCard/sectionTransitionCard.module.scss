@@ -61,6 +61,25 @@
   // Base styles handled by shared sc-* global classes
 }
 
+/* Countdown number inside the button — inherits CTA font sizing */
+.section-transition-countdown {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Auto-advance helper text — sits below the footer actions */
+.section-transition-auto-msg {
+  margin: 8px 0 0;
+  font-family: 'Gilroy', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: rgba(189, 193, 201, 0.65);
+  text-align: center;
+}
+
 // Shared sc-* classes from system-check-modal — kept global
 :global(.sc-divider) {
   height: 1px;

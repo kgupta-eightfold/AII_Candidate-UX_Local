@@ -171,9 +171,9 @@ export default function ConversationalScreen() {
                 </button>
               </div>
             )}
-
-            {state.transitionModal && <SectionTransitionCard />}
           </div>
+
+          {state.transitionModal && <SectionTransitionCard />}
         </div>
 
         <TranscriptPanel messages={transcriptMessages} variant="coding" />

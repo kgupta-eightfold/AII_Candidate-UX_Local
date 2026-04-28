@@ -171,6 +171,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .techqna-main-area--section-transition {
     justify-content: center;
     gap: 64px;
+    position: relative;
 }
 
 /* Center cluster wraps avatar + inline transcript or transition card */
@@ -179,9 +180,19 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     align-items: center;
     justify-content: center;
     gap: 120px;
+    opacity: 1;
+    transition: opacity 350ms ease;
 }
+
+/* Avatar cluster fades out and leaves flex flow so the transition card centers cleanly */
 .techqna-main-area--section-transition .techqna-center-cluster {
-    gap: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    gap: 0;
 }
 
 /* Slot for the avatar component */

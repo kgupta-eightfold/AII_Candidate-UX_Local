@@ -186,14 +186,28 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     align-items: center;
     justify-content: center;
     gap: 120px;
-}
-.techqna-main-area--section-transition .techqna-center-cluster {
-    gap: 120px;
+    opacity: 1;
+    transition: opacity 350ms ease;
 }
 
 /* Slot for the avatar component */
 .avatar-main-slot {
     flex-shrink: 0;
+}
+
+.techqna-main-area--section-transition {
+    position: relative;
+}
+
+/* Avatar cluster fades out and leaves flex flow so the transition card centers cleanly */
+.techqna-main-area--section-transition .techqna-center-cluster {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    gap: 0;
 }
 
 /* ================================================

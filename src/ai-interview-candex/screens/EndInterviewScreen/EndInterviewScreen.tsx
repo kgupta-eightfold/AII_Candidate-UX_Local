@@ -78,8 +78,8 @@ export default function EndInterviewScreen() {
                 suppressAutoPlay={!activeHere}
               />
             </div>
-            <SectionTransitionCard />
           </div>
+          <SectionTransitionCard />
         </div>
 
         <TranscriptPanel messages={transcriptMessages} variant="coding" />
